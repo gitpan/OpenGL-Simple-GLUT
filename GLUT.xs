@@ -137,8 +137,15 @@ void cbname ## Callback prototype \
 
 #define register_callback_xs(cbname) \
 		if (!SvROK(cb)) { \
-			croak("Callback must be code reference"); \
-			return; \
+                        if (SVt_IV == SvTYPE(cb)) { \
+                                if (0==SvIV(cb)) { \
+                                        glut ## cbname ## Func(NULL); \
+		av_store( cbname ## Funcs,glutGetWindow(),newSViv(0)); \
+                                        return; \
+                                } \
+                        } \
+                        croak("Callback must be code reference"); \
+                        return; \
 		} \
 		if (SVt_PVCV != SvTYPE(SvRV(cb))) { \
 			croak("Callback must be code reference"); \

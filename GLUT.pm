@@ -200,7 +200,19 @@ GLUT_NORMAL GLUT_OVERLAY
 
 		GLUT_UP GLUT_DOWN
 		GLUT_LEFT GLUT_ENTERED
-	
+
+                GLUT_MENU_NOT_IN_USE GLUT_MENU_IN_USE 
+
+                GLUT_NOT_VISIBLE GLUT_VISIBLE 
+
+                GLUT_HIDDEN GLUT_FULLY_RETAINED 
+                GLUT_PARTIALLY_RETAINED GLUT_FULLY_COVERED 
+
+                GLUT_RED GLUT_GREEN GLUT_BLUE 
+
+                GLUT_STROKE_ROMAN GLUT_STROKE_MONO_ROMAN
+                GLUT_BITMAP_9_BY_15 GLUT_BITMAP_8_BY_13
+                GLUT_BITMAP_TIMES_ROMAN_10 GLUT_BITMAP_TIMES_ROMAN_24
 ) ] );
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
@@ -208,7 +220,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 );
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 #
 # Stolen from output of h2xs
