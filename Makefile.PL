@@ -13,6 +13,11 @@ if ($^O eq 'darwin') {
                 LDDLFLAGS => $Config{lddlflags} . qq( -framework GLUT ),
                 INC => '-FGLUT',
         );
+} elsif ($^O eq 'freebsd') {
+        push @flags,(
+                LIBS => '-L/usr/X11R6/lib -lglut',
+                INC => '-I/usr/X11R6/include',
+        );
 } elsif ($^O eq 'irix') {
         push @flags,(
                 LIBS => '-L/usr/freeware/lib32 '

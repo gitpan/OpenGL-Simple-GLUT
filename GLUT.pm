@@ -220,7 +220,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 our @EXPORT = qw(
 );
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 #
 # Stolen from output of h2xs
